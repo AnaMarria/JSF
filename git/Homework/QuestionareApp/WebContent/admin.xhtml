@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:outputStylesheet library="css" name="style.css" />
+<h:outputStylesheet library="css" name="bootstrap.min.css" />
+<h:head>
+	<title>Admin page</title>
+</h:head>
+<h:body>
+	<h:form styleClass="form-signin col-sm-6">
+
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Welcome to the admin page</h5>
+				<h6 class="card-subtitle mb-2 text-muted">you are logged in as
+					#{login.username}</h6>
+				<h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>
+			</div>
+		</div>
+		<br></br>
+
+		<div class="card">
+			<div class="card-body">
+				<p>The xml file is processed and generated as questionnaire for students.</p>
+			</div>
+		</div>
+		<br></br>
+
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Records</h5>
+				<p class="card-text">Do you want to register a new questionnaire result?</p>
+				<h:commandButton action="#{register.saveScore}" value="Go to register page"
+					styleClass="btn btn-sm btn-primary btn-block"></h:commandButton>
+
+			</div>
+		</div>
+		<br></br>
+		
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">History</h5>
+				<!--  <h6 class="card-subtitle mb-2 text-muted">See all your scores</h6> -->
+
+				<p>View the records for all students.</p>
+				<h:commandButton action="#{admin.getAllStudentExams}"
+					styleClass="btn btn-sm btn-primary btn-block" value="View"></h:commandButton>
+			</div>
+		</div>
+		<br></br>
+	</h:form>
+</h:body>
+</html>

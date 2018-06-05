@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15222694187930" configfile="/QuestionareApp/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="questionare.xhtml" x="122" y="562" id="pf15274150118860" referenceLink="//@navigationRule.1/@fromViewId|" path="/questionare.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="answer.xhtml" x="122" y="946" id="pf15274150118862" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" path="/answer.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="insert.xhtml" comment="add user" id="pf15276165244010" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15276165244011 pf15276165244012" path="/register.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="output.xhtml" id="pf15276165244013" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf15276165244011" path="/output.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="invalid.xhtml" id="pf15276165244014" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf15276165244012" path="/invalid.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf15280448638440" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15280448638441" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="student.xhtml" id="pf15280448638442" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15280448638441" path="/student.xhtml"/>
+  <links id="pf15276165244011" target="pf15276165244013" source="pf15276165244010" outcome="output" fromaction="#{register.add}"/>
+  <links id="pf15276165244012" target="pf15276165244014" source="pf15276165244010" outcome="invalid" fromaction="#{register.add}"/>
+  <links id="pf15280448638441" target="pf15280448638442" source="pf15280448638440" outcome="success" fromaction="#{login.validateUsernamePassword}"/>
+</pageflow:Pageflow>

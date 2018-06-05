@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Login page</title>
+</h:head>
+<h:body styleClass="text-center">
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+
+	<img
+		src="https://intranet.unitbv.ro/portals/0/Images/Logo-UT-NEGRU-RO.png"
+		alt="" width="742" height="290"></img>
+
+	<h:form styleClass="form-signin col-sm-4">
+
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title"> Please insert your credentials</h5>
+
+				<h:outputLabel for="username" styleClass="control-label col-sm-4">Username: </h:outputLabel>
+				<h:inputText id="username" value="#{login.username}"
+					styleClass="form-control"></h:inputText>
+				<h:message for="username" styleClass="alert alert-warning"></h:message>
+
+				<br></br>
+
+				<h:outputLabel for="password" styleClass="control-label col-sm-4">Password: </h:outputLabel>
+				<h:inputSecret id="password" value="#{login.password}"
+					styleClass="form-control"></h:inputSecret>
+				<h:message for="password" styleClass="alert alert-warning"></h:message>
+				<br></br>
+
+				<h:commandButton action="#{login.validateAuthentification}"
+					value="Login" styleClass="btn btn-lg btn-primary btn-block"></h:commandButton>
+			</div>
+		</div>
+		<br></br>
+
+	</h:form>
+
+</h:body>
+</html>

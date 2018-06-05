@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:outputStylesheet library="css" name="style.css" />
+<h:outputStylesheet library="css" name="bootstrap.min.css" />
+<h:head>
+	<title>Records</title>
+</h:head>
+<h:body>
+	<f:view>
+		<h:form styleClass="form-signin col-sm-6">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Welcome to results page</h5>
+					<h6 class="card-subtitle mb-2 text-muted">you are logged in as
+						#{login.username}</h6>
+					<h:outputLink value="admin.xhtml">Back to first page.</h:outputLink>
+					<br></br>
+					<h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>
+				</div>
+			</div>
+			<br></br>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">View students results</h5>
+					<h:dataTable value="#{admin.records}" var="record" border="1"
+						headerClass="adminHeader" rowClasses="adminRows" id="adminHistory">
+						<h:column>
+							<f:facet name="header">
+								<f:verbatim>Name</f:verbatim>
+							</f:facet>
+							<h:outputText value="#{record.name}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<f:verbatim>Score</f:verbatim>
+							</f:facet>
+							<h:outputText value="#{record.score}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<f:verbatim>Subject</f:verbatim>
+							</f:facet>
+							<h:outputText value="#{record.subject}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">Delete</f:facet>
+							<h:commandButton action="#{admin.deleteStudentRecord(record.id)}"
+								value="Delete" class="btn btn-danger" />
+						</h:column>
+					</h:dataTable>
+				</div>
+			</div>
+			<br></br>
+		</h:form>
+	</f:view>
+</h:body>
+</html>

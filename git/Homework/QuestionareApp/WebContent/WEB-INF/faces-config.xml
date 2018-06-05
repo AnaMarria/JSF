@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+	version="2.1">
+	<navigation-rule>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{login.validateUsernamePassword}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/student.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<managed-bean>
+		<managed-bean-name>Exams</managed-bean-name>
+		<managed-bean-class>managedbean.Exams</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	
+	<managed-bean>
+		<managed-bean-name>register</managed-bean-name>
+		<managed-bean-class>managedbean.Register</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	
+	<navigation-rule>
+		<description>add user</description>
+		<from-view-id>/register.xhtml</from-view-id>
+
+		<navigation-case>
+			<from-action>#{register.add}</from-action>
+			<from-outcome>output</from-outcome>
+			<to-view-id>/output.xhtml</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-action>#{register.add}</from-action>
+			<from-outcome>invalid</from-outcome>
+			<to-view-id>/invalid.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>

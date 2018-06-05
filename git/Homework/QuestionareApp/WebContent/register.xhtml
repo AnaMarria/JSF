@@ -1,0 +1,67 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:outputStylesheet library="css" name="style.css" />
+<h:outputStylesheet library="css" name="bootstrap.min.css" />
+<h:head>
+	<title>Record the results</title>
+</h:head>
+<h:body>
+
+	<h:form styleClass="form-signin col-sm-6">
+
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Result record page</h5>
+				<h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>
+			</div>
+		</div>
+		<br></br>
+		<br></br>
+
+		<div class="card">
+			<div class="card-body">
+
+				<table>
+					<tr>
+						<td><h:messages showDetail="true" /></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="Enter registration Id: "
+								styleClass="control-label col-sm-4" /></td>
+						<td><h:inputText value="#{register.userID}"
+								styleClass="form-control" /></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="Enter student name : "
+								styleClass="control-label col-sm-4" /></td>
+						<td><h:inputText value="#{register.name}"
+								styleClass="form-control" /></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="Enter student score : "
+								styleClass="control-label col-sm-4" /></td>
+						<td><h:inputText value="#{register.score}"
+								styleClass="form-control" /></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="Enter the subject : "
+								styleClass="control-label col-sm-4" /></td>
+						<td><h:inputText value="#{register.subject}"
+								styleClass="form-control" /></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><br></br> <h:commandButton value="Insert"
+								action="#{register.add}"
+								styleClass="btn btn-sm btn-primary btn-block" /></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</h:form>
+
+</h:body>
+</html>

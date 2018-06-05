@@ -1,0 +1,91 @@
+@CHARSET "ISO-8859-1";
+
+.form-signin {
+	width: 100%;
+	max-width: 450px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+#quiz {
+	margin: 20px auto;
+	width: 100%;
+	display: inline-block;
+}
+
+#details {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	height: auto;
+	width: 100%;
+}
+
+table {
+	margin: auto;
+	height: auto;
+}
+
+#mytable {
+	border-collapse: inherit;
+}
+
+.row1, .row2 {
+	height: auto;
+}
+
+tr {
+	display: block;
+	margin-top: 15px;
+}
+
+td {
+	display: table-row;
+}
+
+tbody {
+	margin: 5px 25px;
+}
+
+table#adminHistory {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	display: table;
+	border-collapse: separate;
+	border-spacing: 2px;
+	border-color: grey;
+}
+
+thead {
+	display: table-header-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+tr {
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+
+.adminHeader {
+	display: table-cell;
+	vertical-align: inherit;
+}
+
+tbody {
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+.adminRows {
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+.adminRows td {
+	display: table-cell;
+	vertical-align: inherit;
+}

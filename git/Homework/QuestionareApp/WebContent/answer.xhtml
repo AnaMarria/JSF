@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:outputStylesheet library="css" name="style.css" />
+<h:outputStylesheet library="css" name="bootstrap.min.css" />
+<h:head>
+	<title>View your score</title>
+</h:head>
+<h:body>
+	<h:form>	
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Welcome to the results page #{login.username}.</h5>
+				<h6 class="card-subtitle mb-2 text-muted">The current score is #{questionare.percentage}</h6>
+				<h:outputLink value="student.xhtml">Back to the student page.</h:outputLink><br></br>
+				<h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>
+			</div>
+		</div>
+		<br></br>		
+		
+			<div class="card">
+			<div class="card-body">
+				<img src="https://img3.stockfresh.com/files/o/orensila/m/89/5503216_stock-vector-owl-holding-open-book.jpg" alt="" width="450" height="410"></img>
+			</div>
+		</div>
+		<br></br>
+	</h:form>	
+</h:body>
+</html>

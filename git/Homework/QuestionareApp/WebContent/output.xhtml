@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:outputStylesheet library="css" name="style.css" />
+<h:outputStylesheet library="css" name="bootstrap.min.css" />
+<h:body>
+	<h:form>
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Value added to database successfully.</h5>
+				<!-- 		<h:outputLink value="index.xhtml">Back to student page.</h:outputLink>  -->
+				<h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>
+			</div>
+		</div>
+		<br></br>
+	</h:form>
+</h:body>
+</html>

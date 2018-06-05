@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:outputStylesheet library="css" name="style.css" />
+<h:outputStylesheet library="css" name="bootstrap.min.css" />
+<h:head>
+	<title>Questionnaire page</title>
+</h:head>
+<h:body>
+	<h:outputStylesheet library="css" name="style.css" />
+	<f:view>
+		<h:form styleClass="form-signin col-sm-6">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Welcome to the student page</h5>
+					<h6 class="card-subtitle mb-2 text-muted">You are logged in as #{login.username}</h6>
+					<h6 class="card-subtitle mb-2 text-muted">The subject of the questionnaire is for: #{questionare.subject}</h6>
+					<h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>
+				</div>
+			</div>
+			<br></br>
+		</h:form>
+		<h:form styleClass="form-signin col-sm-6">
+			<div class="card">
+				<div class="card-body">
+					<h:dataTable value="#{Exams.exams}" var="exam" border="0"
+						headerClass="header" rowClasses="row1" styleClass="table"
+						id="mytable">
+						<h:outputText value="#{exam.sizeExam}"></h:outputText>
+
+						<h:column>
+							<f:facet name="header">
+								<f:verbatim>Each question has one correct answer!</f:verbatim>
+							</f:facet>
+
+							<h:outputText value="#{exam.question}" />
+							<h:selectOneRadio value="#{questionare.answer}"
+								styleClass="preformatted" required="true">
+								<f:selectItem itemValue="#{exam.firstanswer}"
+									itemLabel="#{exam.firstanswer}" />
+								<f:selectItem itemValue="#{exam.secondanswer}"
+									itemLabel="#{exam.secondanswer}" />
+								<f:selectItem itemValue="#{exam.thirdanswer}"
+									itemLabel="#{exam.thirdanswer}" />
+								<f:selectItem itemValue="#{exam.fourthanswer}"
+									itemLabel="#{exam.fourthanswer}" />
+								<f:ajax event="change" listener="#{exam.validateAnswer}" />
+							</h:selectOneRadio>
+
+						</h:column>
+					</h:dataTable>
+					<h:commandButton value="Submit" action="#{questionare.saveExam}"
+						styleClass="btn btn-outline-primary" />
+					<h:commandButton value="Reset" type="reset"
+						styleClass="btn btn-outline-info" />
+				</div>
+			</div>
+		</h:form>
+	</f:view>
+</h:body>
+</html>
