@@ -24,13 +24,10 @@ public class Exams {
 		ArrayList al = new ArrayList();
 		Exam exm;
 
-		// read data from XML file
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		try {
 			DocumentBuilder builder = factory.newDocumentBuilder();
 
-			// get physical path for questionare.XML. First get access to
-			// ServletContext using FacesContext
 			ServletContext context = (ServletContext) FacesContext.getCurrentInstance().getExternalContext()
 					.getContext();
 
@@ -42,19 +39,16 @@ public class Exams {
 			NodeList exams = root.getChildNodes();
 
 			for (int i = 0; i < exams.getLength(); i++) {
-				// skip the rest if node is not an element
 				if (exams.item(i).getNodeType() != Node.ELEMENT_NODE)
 					continue;
 
 				NodeList examdetails = exams.item(i).getChildNodes();
 
-				// create a exam with the data from questionare element in XML document
 				exm = new Exam(examdetails.item(1).getTextContent(), examdetails.item(3).getTextContent(),
 						examdetails.item(5).getTextContent(), examdetails.item(7).getTextContent(),
 						examdetails.item(9).getTextContent(), examdetails.item(11).getTextContent());
-				al.add(exm); // add question to ArrayList
+				al.add(exm); 
 				Collections.shuffle(al);
-				System.out.println(al);
 			}
 
 			return al;

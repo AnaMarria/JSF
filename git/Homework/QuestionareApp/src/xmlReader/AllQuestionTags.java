@@ -38,13 +38,12 @@ public class AllQuestionTags {
 
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			Node node = nList.item(temp);
-			System.out.println(""); // Just a separator
+			System.out.println("");
 			if (node.getNodeType() == Node.ELEMENT_NODE) {
-				// Print each employee's detail
-				Element eElement = (Element) node;
+
+			Element eElement = (Element) node;
 				testNo.add(eElement.getElementsByTagName("question").item(0).getTextContent());
-				System.out
-						.println("First Name : " + eElement.getElementsByTagName("question").item(0).getTextContent());
+				System.out.println("First Name : " + eElement.getElementsByTagName("question").item(0).getTextContent());
 			}
 		}
 
